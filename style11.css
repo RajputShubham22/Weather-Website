@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css?family=Skranji');
+@import url('https://fonts.googleapis.com/css?family=Bitter');
+@import url('https://fonts.googleapis.com/css?family=Abril+Fatface');
+body{
+	margin: 0px;
+}
+
+header
+{
+	background: black;
+	color: white;
+	padding : 8px 0px 6px 40px;
+height: 50px;
+	}
+
+header h1 
+{ display : inline;
+	font-family: 'Skranji', cursive;
+font-size: 40px;
+	}
+
+nav ul
+{
+	display :   inline;
+	padding: 0px;
+	margin-left: 10px;
+}
+
+nav ul li
+{
+	display: inline-block;
+	list-style-type: none;
+	color : white;
+	margin-left:30px;
+}
+
+nav ul li a
+{
+	
+	color: white; }
+	
+	.homered
+	{
+		background-color: red;
+		padding : 30px 10px 15px 10px;
+	}
+	.homeblue:hover
+	{
+		background-color:blue;
+		padding :30px 10px 15px 10px;
+		font-size: 20px;
+	}
+	.main
+	{
+		font-family: 'Bitter', serif;
+		margin : 50px 0px 0px 0px;
+		font-size: 75px;
+		
+	}
+	
+	.top{
+		font-family: 'Abril Fatface', cursive;
+		 margin: 0px 0px 10px 10px;
+		font-size: 50px;
+		background-color: #d6d6c2;
+		
+	}
+	
+	.medium{
+		font-family: 'Abril Fatface', cursive;
+		
+		 margin: 0px 0px 10px 10px;
+font-size: 50px;
+background-color:#c2c2a3;
+display:inline-block;
+		 }
+	
+	.last
+	
+	{font-family: 'Abril Fatface', cursive;
+		
+	 margin: 0px 0px 10px 10px;	
+		font-size: 50px;
+		
+			}
+	
+	.buttonhome
+	{
+		
+		margin: 0px 0px 0px 800px;
+		background: #641E16 ;
+		 		font-family: 'Bitter', serif;
+		color:black;
+		font-size: 1em;
+		font-weight: 1800px;	
+		border:none;
+ 
+		
+		
+					
+		
+	}
+	

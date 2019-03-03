@@ -1,0 +1,145 @@
+<html>
+  
+  <head>
+    
+    <title>Forecast Five</title>
+	<link rel="icon" href="unnamed.jpg"/>
+    <meta charset="utf-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" ></script>
+    <script src="http://code.jquery.com/ui/1.7.0/jquery-ui.js" ></script>
+    <link rel="stylesheet" href="styles.css">
+    
+  </head>
+  
+  <body>
+        
+	<header class ="top"> 
+<h1>Forecast Five</h1>
+<a style="text-decoration:none" class="homered" href="first.html" > <strong>HOME </strong></a>
+</header>
+    
+    <div style=" display:block; clear:left;">
+      <div style="padding: 60px 300px;">
+          <input type="text" id="city" placeholder="Find your location...">
+          <button type="button" id="btn1">Find</button>
+      </div>
+    </div>
+    
+    <script>
+      var city_v;
+      var d = new Date();
+      var n = d.getDay();
+      var myDays= ["Sun","Mon","Tue","Wed","Thurs","Fri","Sat","Sun","Mon","Tue","Wed"];
+      
+      function getStats(callback) {
+      
+        var weather = 'http://api.openweathermap.org/data/2.5/forecast/daily?q='+city_v+'&units=metric&APPID=6a47ae5364705b0d1cb4859e16a1f6f0' ;
+        $.ajax({
+          dataType: "jsonp",
+          url: weather,
+          success: callback
+        });
+      }
+      
+      $(document).ready(function() {
+        $(".wapp").hide();
+      $("#btn1").click(function(){
+        $(".wapp").show();
+        city_v = $("#city").val();
+        getStats(function (data) {
+          //document.getElementById('0').innerHTML = JSON.stringify(data);
+          document.getElementById('img0').src = "http://openweathermap.org/img/w/" + data.list[0].weather[0].icon + ".png";
+          document.getElementById('hed0').innerHTML = "Today<br>"+ data.list[0].temp.day + " <sup>o</sup>C<br>" + data.list[0].weather[0].main;
+          document.getElementById('0').innerHTML = 
+            data.list[0].weather[0].description +
+            "<br>Minimum : " + data.list[0].temp.min +
+            " <sup>o</sup>C<br>Maximum : " + data.list[0].temp.max +
+            " <sup>o</sup>C<br>Morning &nbsp; : " + data.list[0].temp.morn +
+            " <sup>o</sup>C<br>Evening &nbsp;&nbsp; : " + data.list[0].temp.eve +
+            " <sup>o</sup>C<br>Night &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : " + data.list[0].temp.night +
+            " <sup>o</sup>C<br>Humidity : " + data.list[0].humidity + "%";
+          
+          document.getElementById('img1').src = "http://openweathermap.org/img/w/" + data.list[1].weather[0].icon + ".png";
+          document.getElementById('hed1').innerHTML = myDays[n+1] +"<br>"+ data.list[1].temp.day + " <sup>o</sup>C<br>" + data.list[1].weather[0].main;
+          document.getElementById('1').innerHTML = 
+            data.list[1].weather[0].description +
+            "<br>Minimum : " + data.list[1].temp.min +
+            " <sup>o</sup>C<br>Maximum : " + data.list[1].temp.max +
+            " <sup>o</sup>C<br>Morning &nbsp; : " + data.list[1].temp.morn +
+            " <sup>o</sup>C<br>Evening &nbsp;&nbsp; : " + data.list[1].temp.eve +
+            " <sup>o</sup>C<br>Night &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : " + data.list[1].temp.night +
+            " <sup>o</sup>C<br>Humidity : " + data.list[1].humidity + "%";
+          
+          document.getElementById('img2').src = "http://openweathermap.org/img/w/" + data.list[2].weather[0].icon + ".png";
+          document.getElementById('hed2').innerHTML = myDays[n+2] +"<br>"+ data.list[2].temp.day + " <sup>o</sup>C<br>" + data.list[2].weather[0].main;
+          document.getElementById('2').innerHTML = 
+            data.list[2].weather[0].description +
+            "<br>Minimum : " + data.list[2].temp.min +
+            " <sup>o</sup>C<br>Maximum : " + data.list[2].temp.max +
+            " <sup>o</sup>C<br>Morning &nbsp; : " + data.list[2].temp.morn +
+            " <sup>o</sup>C<br>Evening &nbsp;&nbsp; : " + data.list[2].temp.eve +
+            " <sup>o</sup>C<br>Night &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : " + data.list[2].temp.night +
+            " <sup>o</sup>C<br>Humidity : " + data.list[2].humidity + "%";
+          
+          document.getElementById('img3').src = "http://openweathermap.org/img/w/" + data.list[3].weather[0].icon + ".png";
+          document.getElementById('hed3').innerHTML = myDays[n+3] +"<br>"+ data.list[3].temp.day + " <sup>o</sup>C<br>" + data.list[3].weather[0].main;
+          document.getElementById('3').innerHTML = 
+            data.list[3].weather[0].description +
+            "<br>Minimum : " + data.list[3].temp.min +
+            " <sup>o</sup>C<br>Maximum : " + data.list[3].temp.max +
+            " <sup>o</sup>C<br>Morning &nbsp; : " + data.list[3].temp.morn +
+            " <sup>o</sup>C<br>Evening &nbsp;&nbsp; : " + data.list[3].temp.eve +
+            " <sup>o</sup>C<br>Night &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : " + data.list[3].temp.night +
+            " <sup>o</sup>C<br>Humidity : " + data.list[3].humidity + "%";
+          
+          document.getElementById('img4').src = "http://openweathermap.org/img/w/" + data.list[4].weather[0].icon + ".png";
+          document.getElementById('hed4').innerHTML = myDays[n+4] +"<br>"+ data.list[4].temp.day + " <sup>o</sup>C<br>" + data.list[4].weather[0].main;
+          document.getElementById('4').innerHTML = 
+            data.list[4].weather[0].description +
+            "<br>Minimum : " + data.list[4].temp.min +
+            " <sup>o</sup>C<br>Maximum : " + data.list[4].temp.max +
+            " <sup>o</sup>C<br>Morning &nbsp; : " + data.list[4].temp.morn +
+            " <sup>o</sup>C<br>Evening &nbsp;&nbsp; : " + data.list[4].temp.eve +
+            " <sup>o</sup>C<br>Night &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : " + data.list[4].temp.night +
+            " <sup>o</sup>C<br>Humidity : " + data.list[4].humidity + "%";
+        });
+      }); 
+      });
+        
+    </script>
+
+    <div style="display:block;float:left;clear:left">
+      <div class="wapp" >  
+        <img id="img0" style="height:80px; width:80px; float:right; ">
+        <h2 id="hed0"></h2>
+        <h4 id="0" style="float:left;"></h4>
+      </div>
+      
+      <div class="wapp" >  
+        <img id="img1" style="height:80px; width:80px; float:right; ">
+        <h2 id="hed1"></h2>
+        <h4 id="1" style="float:left;"></h4>
+      </div>
+      
+      <div class="wapp" >  
+        <img id="img2" style="height:80px; width:80px; float:right; ">
+        <h2 id="hed2"></h2>
+        <h4 id="2" style="float:left;"></h4>
+      </div>
+      
+      <div class="wapp" >  
+        <img id="img3" style="height:80px; width:80px; float:right; ">
+        <h2 id="hed3"></h2>
+        <h4 id="3" style="float:left;"></h4>
+      </div>
+      
+      <div class="wapp" >  
+        <img id="img4" style="height:80px; width:80px; float:right; ">
+        <h2 id="hed4"></h2>
+        <h4 id="4" style="float:left;"></h4>
+      </div>
+    </div>
+
+  </body>
+  
+</html>

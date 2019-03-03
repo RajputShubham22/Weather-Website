@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css?family=Skranji');
+@import url('https://fonts.googleapis.com/css?family=Russo+One');
+body
+
+{
+
+margin: 0px;
+
+
+
+}
+
+header
+{
+	background: black;
+	color: white;
+	padding : 8px 0px 6px 40px;
+height: 45px;
+}
+
+h1
+{font-family: 'Skranji', cursive;
+	margin: 0px 0px 0px 500px;
+	background: red;
+	display: inline-block;
+	height : 113%;
+	padding : 0px;
+	
+}
+
+h2
+{
+	font-family: 'Russo One', sans-serif;
+	font-size: 50px;
+	margin: 0px 0px 0px 450px;	
+
+	}
+img
+{
+margin: 20px 0px 0px 450px;	
+	
+}
+
+p
+{
+	font-size: 30px;
+}
+.homered
+	{
+		background-color: #808080;
+		display: inline-block;
+color: white;
+font-size: 30px;
+margin: 10px 0px 10px 10px;
+	padding : 30px 10px 10px 10px;
+	}
+
+	.homeblack
+	{
+	background-color:red;
+		display: inline-block;
+color: white;
+font-size: 30px;
+margin: 10px 0px 10px 1200px;
+	padding : 30px 10px 15px 10px;	
+	}
+
+	.homeblue
+	{
+		font-family: 'Skranji', cursive;
+		color: white;
+		background-color: red;
+		font-size: 30px;
+margin: 0px 0px 0px 450px;
+	padding : 30px 10px 15px 10px;
+	height: 45px;
+
+	}
